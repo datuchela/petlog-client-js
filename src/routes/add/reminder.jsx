@@ -33,11 +33,11 @@ const AddReminderPage = () => {
   }, [pets]);
 
   const { addReminder } = useReminder();
-  const { isLoading, isError, isSuccess, data, mutate } = addReminder();
+  const { isLoading, isError, isSuccess, mutate } = addReminder();
 
   useEffect(() => {
     if (!isSuccess) return;
-    return navigate("/", { replace: true });
+    return navigate(`/pet/${petId}`, { replace: true });
   }, [isSuccess]);
 
   const handleSubmit = async (e) => {
