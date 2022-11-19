@@ -5,7 +5,7 @@ Client side for a simple web app for tracking reminders exclusively for pets.
 
 # stuff to do:
 
-1. [ ] _BUG06_ Similar to _BUG04_, but when adding reminders.
+1. [x] _BUG06_ Similar to _BUG04_, but when adding reminders.
 2. [ ] _BUG05_ Sometimes refreshing token doesn't help with POST requests
 3. [ ] _BUG03_ refreshToken expires, you still get to add pets, might be related to _BUG02_
 4. [ ] Add "reminders" cache on useQuery hook
