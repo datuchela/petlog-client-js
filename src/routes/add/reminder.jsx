@@ -33,7 +33,7 @@ const AddReminderPage = () => {
   }, [pets]);
 
   const { addReminder } = useReminder();
-  const { isLoading, isError, data, mutate } = addReminder();
+  const { isLoading, isError, isSuccess, data, mutate } = addReminder();
 
   useEffect(() => {
     if (!isSuccess) return;
