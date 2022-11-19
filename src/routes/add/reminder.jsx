@@ -37,7 +37,7 @@ const AddReminderPage = () => {
 
   useEffect(() => {
     if (!isSuccess) return;
-    return navigate(`/pet/${petId}`, { replace: true });
+    return navigate(`/pet/${form.petId}`, { replace: true });
   }, [isSuccess]);
 
   const handleSubmit = async (e) => {
