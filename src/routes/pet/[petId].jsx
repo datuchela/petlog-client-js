@@ -7,9 +7,11 @@ import useReminder from "../../hooks/useReminder";
 //UI Components
 import Link from "../../components/atoms/Link";
 import Button from "../../components/atoms/Button";
+import { useEffect } from "react";
 
 const PetPage = () => {
   const { petId } = useParams();
+  const navigate = useNavigate();
 
   // usePet hooks
   const { getPet, deletePet } = usePet();
@@ -21,11 +23,14 @@ const PetPage = () => {
   const { mutate: deleteReminderMutate, isLoading: isDeleteReminderLoading } =
     deleteReminder();
 
-  const navigate = useNavigate();
+  // Navigates on main page after success
+  useEffect(() => {
+    if (!isSuccess) return;
+    return navigate("/", { replace: true });
+  }, [isSuccess]);
 
   const handleDeletePet = async () => {
     mutate(petId);
-    return navigate("/", { replace: true });
   };
 
   const handleDeleteReminder = async (reminderId) => {
