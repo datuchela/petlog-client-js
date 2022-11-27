@@ -11,7 +11,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="text-4xl">
+      <div className="flex text-4xl">
         Hi, <Heading>{auth?.user?.username}</Heading>
       </div>
       <div>
