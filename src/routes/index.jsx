@@ -3,6 +3,7 @@ import usePets from "../hooks/usePets";
 
 // UI Components
 import Link from "../components/atoms/Link";
+import Heading from "../components/atoms/Heading";
 
 const HomePage = () => {
   const { auth } = useAuth();
@@ -10,7 +11,9 @@ const HomePage = () => {
 
   return (
     <>
-      <div>hello, {auth?.user?.username}</div>
+      <div className="text-4xl">
+        Hi, <Heading>{auth?.user?.username}</Heading>
+      </div>
       <div>
         {isLoading ? (
           "loading..."
@@ -30,7 +33,7 @@ const HomePage = () => {
                 </ul>
               </>
             ) : (
-              <div>
+              <div className="flex flex-col items-center">
                 <h2>You have no pets yet</h2>
                 <Link to="/add/pet">Add Pet</Link>
               </div>
